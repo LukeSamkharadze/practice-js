@@ -1,0 +1,1 @@
+var ressult = (a + b < 4) ? true : false;
