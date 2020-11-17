@@ -1,0 +1,1 @@
+throw new SyntaxError('We have some problem');
