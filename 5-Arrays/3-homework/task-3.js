@@ -1,9 +1,9 @@
 function rotate(array, number, direction = "right") {
     if (!Array.isArray(array))
         throw new Error("First argument must be an array");
-    if (typeof (number) != 'number')
+    if (typeof (number) !== 'number')
         throw new Error("Second argument must be a number");
-    if (typeof (direction) != 'string')
+    if (typeof (direction) !== 'string')
         throw new Error("Third argument must be a string");
 
     return array.map((elem, index, array) =>
