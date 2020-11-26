@@ -9,9 +9,10 @@ Object.defineProperty(Object.prototype, "mergeDeepRight", {
         this[p] = o[p];
     })
   },
+  enumerable: false
 });
 
-let data = {
+const data = {
   name: 'fred',
   age: 10,
   contact: {
@@ -35,3 +36,4 @@ data.mergeDeepRight({
 });
 
 console.log(data);
+console.log(data.contact.meta.tags);
