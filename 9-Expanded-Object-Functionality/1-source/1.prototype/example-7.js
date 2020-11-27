@@ -1,7 +1,6 @@
 const person = {
   getType() {
-    console.log(this);
-    return "person";
+    console.log(this,"proto");
   },
   a: 5
 };
@@ -9,17 +8,18 @@ const person = {
 const friend = {
   __proto__: person,
   getType() {
-    return "person2";
+    console.log(this);
   },
   print() {
-    console.log(Object.getPrototypeOf(this).getType.call(this));
-    console.log(this.getType());
-    console.log(super.getType());
+    Object.getPrototypeOf(this).getType();
+    Object.getPrototypeOf(this).getType.call(this);
+    this.getType();
+    super.getType();
   },
 };
 
 friend.print();
-console.log(friend.a);
+// console.log(friend.a);
 person.a = 1;
-console.log(friend.a);
+// console.log(friend.a);
 
