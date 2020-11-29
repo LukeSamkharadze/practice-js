@@ -1,5 +1,5 @@
 function CoffeeMachine(power, capacity) {
-  Object.defineProperty(this, 'power', { get: () => power })
+  Object.defineProperty(this, 'power', { get: () => {power }})
 
   this.setWaterAmount = function (amount) {
     if (amount < 0) {
