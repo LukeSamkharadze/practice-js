@@ -3,5 +3,6 @@ const obj = {
 };
 
 export const str = 'Some text';
+export let data = "dataa";
 
 export default obj;

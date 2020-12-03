@@ -1,4 +1,5 @@
-import data, { str } from './source.mjs';
+import e, { data, str } from './source.mjs';
 
-console.log(data.name); // Default
+console.log(e); // Default
+console.log(data); // dataaaa
 console.log(str); // Some text
