@@ -33,7 +33,10 @@ class DB {
     if (typeof ID !== 'string')
       throw new Error("ID is not string");
     if (this.#data.has(ID))
-      return { ...this.#data.get(ID), id: ID }
+    {
+      this.#data.get(ID).id = ID;
+      return this.#data.get(ID);
+    }
 
     return null;
   }

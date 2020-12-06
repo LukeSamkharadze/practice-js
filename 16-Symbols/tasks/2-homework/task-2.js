@@ -17,9 +17,7 @@ class DB {
     return Object.getOwnPropertyNames(query).every(o => {
       if (!DB.#props.has(o))
         return false;
-      if (typeof query[o] !== DB.#props.get(o) && typeof query[o] !== 'object')
-        return false;
-      if (typeof query[o] === 'number' && typeof query[o] !== 'object')
+      if (typeof query[o] === 'number' || (typeof query[o] === 'object' && DB.#props.get(o) === 'string'))
         return false;
       if (typeof query[o] === 'object')
         return Object.getOwnPropertyNames(query[o]).every(oo => DB.#queryProps.has(oo) && DB.#queryProps.get(oo) === typeof query[o][oo]) &&
@@ -49,8 +47,10 @@ class DB {
       throw new Error("Arguments count not met");
     if (typeof ID !== 'string')
       throw new Error("ID is not string");
-    if (this.#data.has(ID))
-      return { ...this.#data.get(ID), id: ID }
+    if (this.#data.has(ID)) {
+      this.#data.get(ID).id = ID;
+      return this.#data.get(ID);
+    }
 
     return null;
   }
