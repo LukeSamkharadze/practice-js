@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="div1">
+        <p id="p1">This is a paragraph.</p>
+        <p id="p2">This is another paragraph.</p>
+    </div>
+        
+    <script>
+        const p = document.createElement('p');
+        const node = document.createTextNode('This is new.');
+        p.appendChild(node);
+
+        const element = document.getElementById('div1');
+        element.appendChild(p);
+
+        // insertBefore
+        // child = document.getElementById('p2');
+        // element.insertBefore(p, child);
+
+        // remove element
+        // element.remove();
+
+        // remove using parentNode
+        // const child = document.getElementById('p1');
+        // child.parentNode.removeChild(child);
+
+        // node list
+        // const nodeList = document.querySelectorAll("p");
+        // document.getElementById('p1').innerHTML = nodeList.length;
+        // [element]
+
+    </script>
+</body>
+</html>

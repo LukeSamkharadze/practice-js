@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p id="demo"></p>
+    <p class="demo"></p>
+    <p class="demo"></p>
+    <p class="demo element">demo</p>
+    <p class="demo element">demo</p>
+
+    <script>
+        // By Id
+        document.getElementById('demo').innerHTML = 'Hello World!';
+
+        // By class name
+        // const classes = [...document.getElementsByClassName('demo')];
+        // classes.forEach((element, index) => {
+        //     element.innerHTML = 'Content for ' + index;
+        // });
+
+        //By tag name
+        // const tags = [...document.getElementsByTagName('p')];
+        // tags.forEach((element, index) => {
+        //     element.innerHTML = 'Content for ' + index;
+        // });
+
+        //By querySelector
+        // document.querySelector('.demo.element').innerHTML = 'Query selector';
+
+        //By querySelectorAll
+        // const selectors = [...document.querySelectorAll('.demo.element')];
+        // selectors.forEach((element, index) => {
+        //     element.innerHTML = 'Query selector ' + index;
+        // });
+        
+    </script>
+</body>
+</html>

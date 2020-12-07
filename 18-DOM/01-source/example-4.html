@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <input id="input">
+    <br>
+    Key: <p id="key"></p>
+    <br>
+    Content: <p id="content"></p>
+
+    <script>
+        const input  = document.getElementById('input');
+        input.addEventListener('keypress', (e) => {
+            document.getElementById('key').innerHTML = e.key;
+            document.getElementById('content').innerHTML = input.value;
+        })
+    </script>
+</body>
+</html>
