@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="textBox">
+    <strong>Lorem ipsum</strong> dolor, sit amet consectetur adipisicing elit. Nemo sint earum ab <strong>totam</strong>
+    praesentium aperiam suscipit reiciendis doloribus, sequi incidunt atque necessitatibus <strong>ipsam
+      tempora</strong> obcaecati numquam provident modi, doloremque magni?
+  </div>
+
+  <script>
+    let textBox = document.getElementById("textBox");
+
+    let prevStates = new Map();
+    textBox.addEventListener("mouseenter", e => {
+      document.querySelectorAll("#textBox strong").forEach(o => {
+        prevStates.set(o, { color: o.style.color, fontSize: o.style.fontSize });
+        o.style.color = "red";
+        o.style.fontSize = "large";
+      })
+    })
+
+    textBox.addEventListener("mouseleave", e => {
+      document.querySelectorAll("#textBox strong").forEach(o => {
+        o.style.color = prevStates.get(o).color;
+        o.style.fontSize = prevStates.get(o).fontSize;
+      })
+    })
+  </script>
+</body>
+
+</html>
