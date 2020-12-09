@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body id="body">
+
+  <script>
+    let p = document.createElement("P")
+    let input = document.createElement("input");
+    input.addEventListener("keydown", e => p.innerText = isNaN(e.key) ? e.key : "");
+    
+    document.getElementById("body").append(input);
+    document.getElementById("body").append(p);
+  </script>
+</body>
+
+</html>
